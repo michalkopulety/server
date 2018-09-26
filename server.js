@@ -18,6 +18,7 @@ import {
 	getAllByPlayerId,
 	payFinesById
 } from './actions/fines';
+import { getImage } from './actions/images';
 import cors from 'cors';
 dotenv.config();
 // import {
@@ -55,6 +56,8 @@ router.post('/fines/pay', payFinesById);
 
 router.get('/unpaidFines/:id', getUnpaidByPlayerId);
 router.get('/paidFines/:id', getPaidByPlayerId);
+
+router.get('/images/:imageName', getImage);
 
 // Use our router configuration when we call /api
 app.use('/api', router);
